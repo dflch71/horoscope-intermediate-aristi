@@ -1,5 +1,5 @@
 # ANDROID INTERMEDIATE
-## Curso intermedio
+## Curso Intermedio
 
 Curso intermedio ARISTI - Horoscope good practice
 

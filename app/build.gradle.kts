@@ -1,6 +1,9 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -16,7 +19,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -52,4 +54,25 @@ dependencies {
     val navVersion = "2.7.2"
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+
+    //DaggerHilt
+    val daggerVersion = "2.48"
+    implementation("com.google.dagger:hilt-android:$daggerVersion")
+    kapt("com.google.dagger:hilt-compiler:$daggerVersion")
+
+    // For instrumentation tests
+    //androidTestImplementation("com.google.dagger:hilt-android-testing:$daggerVersion")
+    //kaptAndroidTest("com.google.dagger:hilt-compiler:$daggerVersion")
+
+    // For local unit tests
+    //testImplementation("com.google.dagger:hilt-android-testing:$daggerVersion")
+    //kaptTest("com.google.dagger:hilt-compiler:$daggerVersion")
 }
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
+}
+
+
+

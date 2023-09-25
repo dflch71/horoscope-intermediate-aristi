@@ -53,6 +53,11 @@ android {
 
 dependencies {
 
+    val navVersion = "2.7.2"
+    val daggerVersion = "2.48"
+    val retrofitVersion = "2.9.0"
+    val cameraxVersion = "1.2.3"
+
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
@@ -62,12 +67,10 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //Navigation Component
-    val navVersion = "2.7.2"
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 
     //DaggerHilt
-    val daggerVersion = "2.48"
     implementation("com.google.dagger:hilt-android:$daggerVersion")
     kapt("com.google.dagger:hilt-compiler:$daggerVersion")
 
@@ -80,10 +83,18 @@ dependencies {
     //kaptTest("com.google.dagger:hilt-compiler:$daggerVersion")
 
     //Retrofit
-    val retrofitVersion = "2.9.0"
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
     implementation("com.squareup.okhttp3:logging-interceptor:4.3.1")
+
+    //CameraX
+    implementation("androidx.camera:camera-core:${cameraxVersion}")
+    implementation("androidx.camera:camera-camera2:${cameraxVersion}")
+    implementation("androidx.camera:camera-lifecycle:${cameraxVersion}")
+    implementation("androidx.camera:camera-view:${cameraxVersion}")
+    implementation("androidx.camera:camera-extensions:${cameraxVersion}")
+
+
 }
 
 // Allow references to generated code
